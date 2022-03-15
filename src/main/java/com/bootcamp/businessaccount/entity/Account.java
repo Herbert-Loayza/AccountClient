@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
 
 @Data
-@Document(value = "accountclient")
+@Document(value = "account_client")
 public class Account {
 
     @Id

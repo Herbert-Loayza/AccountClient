@@ -1,36 +1,36 @@
 package com.bootcamp.businessaccount.controller;
 
 import com.bootcamp.businessaccount.entity.Account;
-import com.bootcamp.businessaccount.service.AcoountService;
+import com.bootcamp.businessaccount.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/accountclients")
+@RequestMapping("/api/account")
 public class AccountController {
 
     @Autowired
-    private AcoountService acoountService;
+    private AccountService accountService;
 
     @GetMapping
     public Flux<Account> getAll(){
-        return acoountService.findAll();
+        return accountService.findAll();
     }
     @GetMapping("/{id}")
     public Mono<Account> findById(@PathVariable String id){
-        return acoountService.findById(id);
+        return accountService.findById(id);
     }
 
     @PostMapping("/update")
     public Mono<Account> create(@RequestBody Account account){
-        return acoountService.save(account);
+        return accountService.save(account);
     }
 
     @PutMapping("/{id}")
     public Mono<Account> update(@RequestBody Account account){
-        return acoountService.update(account);
+        return accountService.update(account);
     }
 
     @DeleteMapping("/{id}")

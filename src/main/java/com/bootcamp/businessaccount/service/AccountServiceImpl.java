@@ -3,10 +3,12 @@ package com.bootcamp.businessaccount.service;
 import com.bootcamp.businessaccount.entity.Account;
 import com.bootcamp.businessaccount.repositoy.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class AccountServiceImpl implements AcoountService{
+@Service
+public class AccountServiceImpl implements AccountService {
 
     @Autowired
     private AccountRepository accountRepository;
@@ -34,6 +36,6 @@ public class AccountServiceImpl implements AcoountService{
 
     @Override
     public Mono<Void> deleteById(Account account) {
-        return accountRepository.deleteById(account);
+        return null;
     }
 }
